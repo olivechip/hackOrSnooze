@@ -140,7 +140,7 @@ class User {
 
   static async signup(username, password, name) {
     const response = await axios.post(`${BASE_URL}/signup`,
-    { params: { user: { username, password, name } } } );
+    { user: { username, password, name } } );
 
     let { user } = response.data;
 
@@ -164,7 +164,7 @@ class User {
 
   static async login(username, password) {
     const response = await axios.post(`${BASE_URL}/login`,
-    { params: { user: { username, password } } } );
+    { user: { username, password } } );
 
     let { user } = response.data;
 
